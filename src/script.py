@@ -12,13 +12,14 @@ def theme():
         customtkinter.set_appearance_mode("Light")
     else:
         customtkinter.set_appearance_mode("Dark")
-
+playback_state ={"paused":False}
 def restart_music():
   global audio_data, sample_rate,bits_per_sample,file_path_shortened
+
   play_audio(audio_data,sample_rate,bits_per_sample)
+  playback_state["paused"]= False
   status_label.configure(text=f"Now Restarting {file_path_shortened.name}")
 
-playback_state ={"paused":False}
 def pause_music():
     global playback_state,sample_rate
 
