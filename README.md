@@ -5,7 +5,7 @@ Music player from complete scratch to open WAV file types
 
 1. Clone the repository
     ```bash
-    git clone https://github.com/SaryNassif/Automated-Content.git
+    git clone https://github.com/SaryNassif/WAV-MusicPlayer.git
     ```
 
 2. Install the required Python packages:
