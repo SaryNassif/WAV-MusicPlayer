@@ -14,8 +14,9 @@ def theme():
         customtkinter.set_appearance_mode("Dark")
 
 def restart_music():
-  global audio_data, sample_rate,bits_per_sample
+  global audio_data, sample_rate,bits_per_sample,file_path_shortened
   play_audio(audio_data,sample_rate,bits_per_sample)
+  status_label.configure(text=f"Now Restarting {file_path_shortened.name}")
 
 playback_state ={"paused":False}
 def pause_music():
@@ -27,7 +28,7 @@ def pause_music():
         playback_state["paused"] = True
 
 def select_file():
-    global audio_data,sample_rate,bits_per_sample,playback_state
+    global audio_data,sample_rate,bits_per_sample,playback_state,file_path_shortened
     #Find WAV file
     file_path = filedialog.askopenfilename(filetypes=[("WAV files", "*.wav"), ("All files", "*.*")])
     with open(file_path, 'rb') as file:
